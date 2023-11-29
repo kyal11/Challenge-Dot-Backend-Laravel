@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CourseController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -39,10 +40,22 @@ Route::group([
 });
 
 Route::group([
-    'middleware' => 'api'
+    'middleware' => 'api',
+    'prefix' => 'users'
 ], function () {
-    Route::get('users', [UserController::class, 'index'])->name('get-all-user');
-    Route::post('users', [UserController::class, 'store'])->name('add-user');
-    Route::patch('users/{id}', [UserController::class, 'update'])->name('update-user');
-    Route::delete('users/{id}', [UserController::class, 'delete'])->name('delete-user');
+    Route::get('/', [UserController::class, 'index'])->name('get-all-user');
+    Route::post('/', [UserController::class, 'store'])->name('add-user');
+    Route::patch('/{id}', [UserController::class, 'update'])->name('update-user');
+    Route::delete('/{id}', [UserController::class, 'delete'])->name('delete-user');
+});
+
+Route::group([
+    'middleware' => 'api',
+    'prefix' => 'courses'
+], function () {
+    Route::get('/', [CourseController::class, 'index'])->name('get-all-course');
+    Route::get('/{id}', [CourseController::class, 'show'])->name('get-detail-corse');
+    Route::post('/', [CourseController::class, 'store'])->name('create-course');
+    Route::put('/{id}', [CourseController::class, 'update'])->name('update-course');
+    Route::delete('/{id}', [CourseController::class, 'destroy'])->name('delete-course');
 });
