@@ -97,14 +97,10 @@ class CourseController extends Controller
                 return response()->json(['error' => 'Course not found'], 404);
             }
 
-            $name = $request->post('name');
-            $credit = $request->post('credit');
-            $description = $request->post('description');
-    
             $course->update([
-                'name' => $name,
-                'credit' => $credit,
-                'description' => $description,
+                'name' => $request->input('name'),
+                'credit' => $request->input('credit'),
+                'description' => $request->input('description'),
             ]);
     
             return response()->json([

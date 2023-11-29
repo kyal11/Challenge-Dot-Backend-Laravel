@@ -38,7 +38,7 @@ class UserController extends Controller
     /**
      * Register a new user.
      *
-     * @param \App\Http\Requests\UserValidator $request
+     * 
      * @param \App\Http\Controllers\AuthController $authController
      * @return \Illuminate\Http\JsonResponse
      */

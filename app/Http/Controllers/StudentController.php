@@ -17,7 +17,7 @@ class StudentController extends Controller
     {
         $rules = [
             'name' => 'required|string|max:255',
-            'nim' => 'required|string|max:20|unique:students,nim,',
+            'nim' => 'required|string|max:20',
             'birth_date' => 'required|date',
             'address' => 'required|string',
             'gender' => 'required|in:Male,Female',
@@ -87,7 +87,7 @@ class StudentController extends Controller
 
     public function update(Request $request, $id)
     {
-        $validator = $this->validateStudent($request, $id);
+        $validator = $this->validateStudent($request);
 
         if ($validator->fails()) {
             return response()->json(['error' => $validator->errors()], 400);

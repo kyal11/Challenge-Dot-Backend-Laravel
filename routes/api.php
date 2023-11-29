@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\GradesController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\StudentController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -58,4 +60,26 @@ Route::group([
     Route::post('/', [CourseController::class, 'store'])->name('create-course');
     Route::put('/{id}', [CourseController::class, 'update'])->name('update-course');
     Route::delete('/{id}', [CourseController::class, 'destroy'])->name('delete-course');
+});
+
+Route::group([
+    'middleware' => 'api',
+    'prefix' => 'students'
+], function () {
+    Route::get('/', [StudentController::class, 'index'])->name('get-all-students');
+    Route::get('/{id}', [StudentController::class, 'show'])->name('get-detail-student');
+    Route::post('/', [StudentController::class, 'store'])->name('create-student');
+    Route::put('/{id}', [StudentController::class, 'update'])->name('update-student');
+    Route::delete('/{id}', [StudentController::class, 'destroy'])->name('delete-student');
+});
+
+Route::group([
+    'middleware' => 'api',
+    'prefix' => 'grades'
+], function () {
+    Route::get('/', [GradesController::class, 'index'])->name('get-all-grade');
+    Route::get('/{id}', [GradesController::class, 'show'])->name('get-detail-grade');
+    Route::post('/', [GradesController::class, 'store'])->name('create-grade');
+    Route::put('/{id}', [GradesController::class, 'update'])->name('update-grade');
+    Route::delete('/{id}', [GradesController::class, 'destroy'])->name('delete-grade');
 });
