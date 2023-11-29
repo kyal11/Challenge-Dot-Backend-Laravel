@@ -39,8 +39,8 @@ class CourseSeeder extends Seeder
             'Big Data Technologies'
         ];
 
-        for ($i = 0 ;$i < 30; $i++) {
-            $course = $courseList[array_rand($courseList)];
+        for ($i = 0 ;$i < count($courseList); $i++) {
+            $course = $courseList[$i];
 
             courses::create([
                 'name' => $course,
