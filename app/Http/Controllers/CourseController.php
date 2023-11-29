@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\CourseValidator;
 use App\Models\courses;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
