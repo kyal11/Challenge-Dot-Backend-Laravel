@@ -29,13 +29,13 @@ Route::get('/', function () {
         'message' => 'Token tidak valid'
     ], 401);
 })->name('login');
-Route::post('register',[AuthController::class, 'register'])->name('register');
+
 
 Route::group([
     'middleware' => 'api',
     'prefix' => 'auth'
 ], function () {
-
+    Route::post('register',[AuthController::class, 'register'])->name('register');
     Route::post('login',[AuthController::class, 'login'])->name('login');
     Route::post('logout',[AuthController::class, 'logout'])->name('logout');
     Route::post('account',[AuthController::class, 'account'])->name('account');
