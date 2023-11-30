@@ -5,7 +5,7 @@
     @yield('css')
 @stop
 
-@section('title', 'Students')
+@section('title', 'Courses')
 
 @section('content_header')
     <h1>Data Students</h1>

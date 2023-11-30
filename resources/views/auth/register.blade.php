@@ -4,7 +4,7 @@
     @stack('css')
     @yield('css')
 @stop
-
+@section('title', 'Register')
 @section('body_class', 'register-page')
 
 @section('body')

@@ -3,7 +3,7 @@
     @stack('css')
     @yield('css')
 @stop
-
+@section('title', 'Login')
 @section('body_class', 'login-page')
 
 @section('body')
