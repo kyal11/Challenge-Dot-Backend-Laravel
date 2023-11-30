@@ -7,5 +7,7 @@ use Illuminate\Http\Request;
 
 class GradeController extends Controller
 {
-    //
+    public function show() {
+        return view('pages.grades');
+    }
 }

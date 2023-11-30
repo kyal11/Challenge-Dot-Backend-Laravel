@@ -23,10 +23,13 @@ class LoginController extends Controller
             ]);
     
             $data = $response->json();
-             
+    
             if (isset($data['access_token'])) {
-                session(['access_token' => $data['access_token']]);
-                return redirect('/'); 
+                $tokenScript = '<script>localStorage.setItem("jwt_token", "' . $data['access_token'] . '");</script>';
+
+                $redirectScript = '<script>window.location.href = "' . route('dashboard') . '";</script>';
+
+            return $tokenScript . $redirectScript;
             } else {
                 return redirect()->route('show-login')->with('error', 'Invalid email or password. Please try again.');
             }
@@ -35,4 +38,21 @@ class LoginController extends Controller
         }
     }
     
+    public function logout(Request $request)
+{
+    $jwtToken = $request->cookie('jwt_token');
+
+    try {
+        $response = Http::withHeaders(['Authorization' => 'Bearer ' . $jwtToken])->post('http://127.0.0.1:8000/api/auth/logout');
+        cookie()->queue(cookie()->forget('jwt_token'));
+
+        // Add a script to remove the token from local storage
+        $removeTokenScript = '<script>localStorage.removeItem("jwt_token");</script>';
+        $redirectScript = '<script>window.location.href = "' . route('login') . '";</script>';
+        return $removeTokenScript . $redirectScript;
+    } catch (\Exception $e) {
+        return redirect()->route('show-login')->with('error', 'Error logging out. Please try again.');
+    }
+}
+
 }
