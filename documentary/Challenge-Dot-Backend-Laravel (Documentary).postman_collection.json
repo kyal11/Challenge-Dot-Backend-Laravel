@@ -1,0 +1,4087 @@
+{
+	"info": {
+		"_postman_id": "a3078a42-a585-4118-a422-cd683aa5147c",
+		"name": "Challenge-Dot-Backend-Laravel (Documentary)",
+		"description": "Restapi for Academic System University",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29947879"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3MDExOTE4MDQsImV4cCI6MTcwMTE5NTQwNCwibmJmIjoxNzAxMTkxODA0LCJqdGkiOiJSd2h3a0szd0Q5b0QwanRCIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.V5gXSsLoqSYc17khdi0tPGsJ9bnVlh3OtWFBspTvxso",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Operator",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "Operator@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Operator",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/register",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Register Succesfull",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/x-www-form-urlencoded",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Operator",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "Op1@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "Operator",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}/api/register",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 03:48:38 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 03:48:38 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Successfully registered\"\n}"
+						},
+						{
+							"name": "Register Failed",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/x-www-form-urlencoded",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Operator",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "Op1@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "Operator",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}/api/register",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"register"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 03:49:27 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 03:49:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"message\": \"The validation process failed\",\n    \"data\": {\n        \"password\": [\n            \"The password field is required.\"\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3MDExODk1MTcsImV4cCI6MTcwMTE5MzExNywibmJmIjoxNzAxMTg5NTE3LCJqdGkiOiJ6Zm15dHN0d1NRTkpmcmtFIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.ACbAbr4208e8IfuQfR231PKiyb4yPuUvPPDPn0ytaTg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "Admin@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Admin",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/auth/login",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login Succesfull",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/x-www-form-urlencoded",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "email",
+											"value": "Admin@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "Admin",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}/api/auth/login",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 28 Nov 2023 16:38:38 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 28 Nov 2023 16:38:38 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"access_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3MDExODk1MTcsImV4cCI6MTcwMTE5MzExNywibmJmIjoxNzAxMTg5NTE3LCJqdGkiOiJ6Zm15dHN0d1NRTkpmcmtFIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.ACbAbr4208e8IfuQfR231PKiyb4yPuUvPPDPn0ytaTg\",\n    \"token_type\": \"bearer\",\n    \"expires_in\": 3600\n}"
+						},
+						{
+							"name": "Login Failed",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/x-www-form-urlencoded",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "email",
+											"value": "Admin@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "admi",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}/api/auth/login",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 28 Nov 2023 16:42:16 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 28 Nov 2023 16:42:16 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Unauthorized\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Account",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3MDEyNTA2NTMsImV4cCI6MTcwMTI1NDI1MywibmJmIjoxNzAxMjUwNjUzLCJqdGkiOiJveU1vYkVsUzVsaEdrS2JBIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.oTdsdG_bprfTxkk86ftv6fnKwoYpOjhIfDhg32RxlTA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/auth/account",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"account"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Account Succesfull",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "Admin@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "Admin",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}/api/auth/account",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"account"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 28 Nov 2023 16:39:20 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 28 Nov 2023 16:39:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"name\": \"Admin\",\n    \"email\": \"Admin@gmail.com\",\n    \"created_at\": \"2023-11-28T15:44:00.000000Z\",\n    \"updated_at\": \"2023-11-28T15:44:00.000000Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3MDEyNzg3MTcsImV4cCI6MTcwMTI4MjMxNywibmJmIjoxNzAxMjc4NzE3LCJqdGkiOiJkaUJGeW9xa216cmxYbUFGIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.zrzI6QJ1agj9flSRhDgCzRc-Cc68pK4NQm4VP7yxD20",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/auth/logout",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Logout Succesfull",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/auth/logout",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"logout"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 28 Nov 2023 16:41:01 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 28 Nov 2023 16:41:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Successfully logged out\"\n}"
+						}
+					]
+				}
+			],
+			"description": "Auth using JWT (Json Web Token)"
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Get All User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3MDEyNjM2ODAsImV4cCI6MTcwMTI2NzI4MCwibmJmIjoxNzAxMjYzNjgwLCJqdGkiOiJhNTFHamYzc3NOWnMxV0h5Iiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.UJspqecQ4vDxfuLzMvRMw5-XzC18bNlG3qRlSx1EbcM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/users",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All User Successfull",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/users",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 13:18:32 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 13:18:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Users data found\",\n    \"users\": [\n        {\n            \"id\": 1,\n            \"name\": \"Admin\",\n            \"email\": \"Admin@gmail.com\",\n            \"created_at\": \"2023-11-29T03:39:14.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:14.000000Z\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"rizkyaa\",\n            \"email\": \"op2@gmail.com\",\n            \"created_at\": \"2023-11-29T07:56:48.000000Z\",\n            \"updated_at\": \"2023-11-29T11:33:40.000000Z\"\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Operator\",\n            \"email\": \"op1@gmail.com\",\n            \"created_at\": \"2023-11-29T07:58:14.000000Z\",\n            \"updated_at\": \"2023-11-29T07:58:14.000000Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Add User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3MDEyNjM2ODAsImV4cCI6MTcwMTI2NzI4MCwibmJmIjoxNzAxMjYzNjgwLCJqdGkiOiJhNTFHamYzc3NOWnMxV0h5Iiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.UJspqecQ4vDxfuLzMvRMw5-XzC18bNlG3qRlSx1EbcM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Operator3",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "op3@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/users",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Add User Successfull",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Operator3",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "op3@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "Operator3",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}/api/users",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 13:19:49 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 13:19:49 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Successfully registered\"\n}"
+						},
+						{
+							"name": "Add User Failed (invalid form)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Operator3",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "op3@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}/api/users",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 13:20:09 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 13:20:09 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"message\": \"The validation process failed\",\n    \"data\": {\n        \"email\": [\n            \"The email has already been taken.\"\n        ],\n        \"password\": [\n            \"The password field is required.\"\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3MDEyNjM2ODAsImV4cCI6MTcwMTI2NzI4MCwibmJmIjoxNzAxMjYzNjgwLCJqdGkiOiJhNTFHamYzc3NOWnMxV0h5Iiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.UJspqecQ4vDxfuLzMvRMw5-XzC18bNlG3qRlSx1EbcM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Rizky Al Arief",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "rizkyalarief11@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "rizky123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/users/6",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"6"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update User Sucessfull",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Rizky Al Arief",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "rizkyalarief11@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "rizky123",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}/api/users/4",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"4"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 13:21:24 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 13:21:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User updated successfully\"\n}"
+						},
+						{
+							"name": "Update User Failed (id not found)",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Rizky Al Arief",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "rizkyalarief11@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "rizky123",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}/api/users/6",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"6"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 13:22:02 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 13:22:02 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"User not found\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3MDEyNjM2ODAsImV4cCI6MTcwMTI2NzI4MCwibmJmIjoxNzAxMjYzNjgwLCJqdGkiOiJhNTFHamYzc3NOWnMxV0h5Iiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.UJspqecQ4vDxfuLzMvRMw5-XzC18bNlG3qRlSx1EbcM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/users/6",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"6"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete User Successfull",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/users/3",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 13:22:35 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 13:22:35 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User deleted successfully\"\n}"
+						},
+						{
+							"name": "Delete User Failed (id not found)",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/users/6",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"6"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 13:23:34 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 13:23:34 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"User not found\"\n}"
+						}
+					]
+				}
+			],
+			"description": "Everything about Users"
+		},
+		{
+			"name": "Students",
+			"item": [
+				{
+					"name": "Get All Students",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/students",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"students"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All Student Sucessfull",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/students",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"students"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 11:35:55 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 11:35:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Students data found\",\n    \"students\": [\n        {\n            \"id\": 1,\n            \"name\": \"Ina Yuniar\",\n            \"nim\": \"148252123\",\n            \"birth_date\": \"1999-12-24\",\n            \"address\": \"Jln. Ikan No. 357, Kotamobagu 92545, NTB\",\n            \"gender\": \"Male\",\n            \"major\": \"Software Engineering\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Himawan Dongoran\",\n            \"nim\": \"773545304\",\n            \"birth_date\": \"1986-02-10\",\n            \"address\": \"Psr. Wora Wari No. 614, Bekasi 88520, Sumbar\",\n            \"gender\": \"Female\",\n            \"major\": \"Biomedical Engineering\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Rangga Hutasoit\",\n            \"nim\": \"136405246\",\n            \"birth_date\": \"2004-12-04\",\n            \"address\": \"Ds. Bakin No. 54, Tebing Tinggi 51139, Riau\",\n            \"gender\": \"Male\",\n            \"major\": \"Computer Science\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Hardana Jailani S.Kom\",\n            \"nim\": \"447999057\",\n            \"birth_date\": \"2017-04-29\",\n            \"address\": \"Jr. Pacuan Kuda No. 732, Kupang 84919, Sumut\",\n            \"gender\": \"Male\",\n            \"major\": \"Aerospace Engineering\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Gamblang Pranowo\",\n            \"nim\": \"008262642\",\n            \"birth_date\": \"2013-10-27\",\n            \"address\": \"Ki. Soekarno Hatta No. 801, Magelang 15534, Kalteng\",\n            \"gender\": \"Female\",\n            \"major\": \"Environmental Engineering\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 6,\n            \"name\": \"Labuh Wibisono\",\n            \"nim\": \"140104659\",\n            \"birth_date\": \"1971-06-29\",\n            \"address\": \"Jr. Banceng Pondok No. 167, Batam 79629, Riau\",\n            \"gender\": \"Male\",\n            \"major\": \"Mechanical Engineering\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 7,\n            \"name\": \"Gilda Faizah Hariyah\",\n            \"nim\": \"930797734\",\n            \"birth_date\": \"2023-05-13\",\n            \"address\": \"Kpg. Ters. Pasir Koja No. 62, Administrasi Jakarta Barat 54673, Gorontalo\",\n            \"gender\": \"Female\",\n            \"major\": \"Mechanical Engineering\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 8,\n            \"name\": \"Farah Lidya Nasyidah S.I.Kom\",\n            \"nim\": \"924990691\",\n            \"birth_date\": \"1975-01-14\",\n            \"address\": \"Psr. Sutami No. 991, Tual 95378, Jatim\",\n            \"gender\": \"Male\",\n            \"major\": \"Environmental Engineering\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 9,\n            \"name\": \"Kiandra Belinda Padmasari\",\n            \"nim\": \"072396376\",\n            \"birth_date\": \"1998-10-09\",\n            \"address\": \"Jr. Bahagia  No. 243, Sorong 29952, Malut\",\n            \"gender\": \"Male\",\n            \"major\": \"Mechanical Engineering\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 10,\n            \"name\": \"Paris Jasmin Susanti\",\n            \"nim\": \"594794900\",\n            \"birth_date\": \"2021-10-08\",\n            \"address\": \"Gg. Gotong Royong No. 286, Sorong 96637, Sulsel\",\n            \"gender\": \"Male\",\n            \"major\": \"Computer Science\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 11,\n            \"name\": \"Zamira Citra Fujiati\",\n            \"nim\": \"441599186\",\n            \"birth_date\": \"1991-01-13\",\n            \"address\": \"Ki. Gegerkalong Hilir No. 201, Palangka Raya 78326, Aceh\",\n            \"gender\": \"Male\",\n            \"major\": \"Environmental Engineering\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 12,\n            \"name\": \"Diah Najwa Nuraini\",\n            \"nim\": \"623856272\",\n            \"birth_date\": \"2001-03-20\",\n            \"address\": \"Kpg. Fajar No. 879, Ternate 76265, Sulbar\",\n            \"gender\": \"Male\",\n            \"major\": \"Aerospace Engineering\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 13,\n            \"name\": \"Tira Hani Yuliarti S.Pt\",\n            \"nim\": \"919991985\",\n            \"birth_date\": \"2002-03-27\",\n            \"address\": \"Ki. Ciwastra No. 903, Sukabumi 98341, Papua\",\n            \"gender\": \"Female\",\n            \"major\": \"Computer Science\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 14,\n            \"name\": \"Nadine Wahyuni\",\n            \"nim\": \"930431921\",\n            \"birth_date\": \"1976-09-23\",\n            \"address\": \"Psr. Jamika No. 633, Bogor 50943, Sumbar\",\n            \"gender\": \"Female\",\n            \"major\": \"Mechanical Engineering\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 15,\n            \"name\": \"Dodo Ramadan S.IP\",\n            \"nim\": \"393239947\",\n            \"birth_date\": \"1984-07-24\",\n            \"address\": \"Ki. Supono No. 762, Kediri 24123, DIY\",\n            \"gender\": \"Female\",\n            \"major\": \"Aerospace Engineering\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 16,\n            \"name\": \"Heru Manullang\",\n            \"nim\": \"430570167\",\n            \"birth_date\": \"1984-09-19\",\n            \"address\": \"Psr. Babah No. 69, Subulussalam 17618, Pabar\",\n            \"gender\": \"Female\",\n            \"major\": \"Computer Science\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 17,\n            \"name\": \"Uchita Novitasari\",\n            \"nim\": \"162268905\",\n            \"birth_date\": \"2004-09-02\",\n            \"address\": \"Dk. Padma No. 330, Langsa 73596, Kalteng\",\n            \"gender\": \"Male\",\n            \"major\": \"Electrical Engineering\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 18,\n            \"name\": \"Uli Wastuti\",\n            \"nim\": \"737283202\",\n            \"birth_date\": \"2023-11-24\",\n            \"address\": \"Kpg. Baha No. 474, Bukittinggi 28745, Jabar\",\n            \"gender\": \"Female\",\n            \"major\": \"Biomedical Engineering\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 19,\n            \"name\": \"Pandu Iswahyudi\",\n            \"nim\": \"184147803\",\n            \"birth_date\": \"1993-10-27\",\n            \"address\": \"Ds. Adisucipto No. 465, Semarang 43692, Bengkulu\",\n            \"gender\": \"Male\",\n            \"major\": \"Mechanical Engineering\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 20,\n            \"name\": \"Tugiman Sihotang\",\n            \"nim\": \"943921849\",\n            \"birth_date\": \"1972-02-11\",\n            \"address\": \"Psr. Jaksa No. 150, Cirebon 88838, Sulsel\",\n            \"gender\": \"Male\",\n            \"major\": \"Civil Engineering\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 21,\n            \"name\": \"Ilsa Yulianti S.Pd\",\n            \"nim\": \"997012471\",\n            \"birth_date\": \"2003-01-08\",\n            \"address\": \"Ki. Salak No. 868, Tebing Tinggi 54974, Jabar\",\n            \"gender\": \"Male\",\n            \"major\": \"Aerospace Engineering\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 22,\n            \"name\": \"Gantar Saputra S.I.Kom\",\n            \"nim\": \"469060580\",\n            \"birth_date\": \"1996-11-17\",\n            \"address\": \"Jr. Bakau Griya Utama No. 872, Pematangsiantar 71001, Pabar\",\n            \"gender\": \"Male\",\n            \"major\": \"Software Engineering\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 23,\n            \"name\": \"Jinawi Digdaya Sirait\",\n            \"nim\": \"216743339\",\n            \"birth_date\": \"2012-05-01\",\n            \"address\": \"Ds. W.R. Supratman No. 654, Lhokseumawe 49377, Maluku\",\n            \"gender\": \"Female\",\n            \"major\": \"Software Engineering\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 24,\n            \"name\": \"Septi Nasyidah\",\n            \"nim\": \"660391957\",\n            \"birth_date\": \"1979-04-22\",\n            \"address\": \"Ds. Dewi Sartika No. 431, Semarang 19260, Sumsel\",\n            \"gender\": \"Female\",\n            \"major\": \"Environmental Engineering\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 25,\n            \"name\": \"Eluh Wibisono S.I.Kom\",\n            \"nim\": \"395068160\",\n            \"birth_date\": \"2015-04-08\",\n            \"address\": \"Gg. Jaksa No. 855, Bengkulu 68834, DIY\",\n            \"gender\": \"Male\",\n            \"major\": \"Electrical Engineering\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 26,\n            \"name\": \"Fathonah Prastuti S.Gz\",\n            \"nim\": \"789168473\",\n            \"birth_date\": \"1999-10-07\",\n            \"address\": \"Dk. Pahlawan No. 232, Bau-Bau 76554, Pabar\",\n            \"gender\": \"Male\",\n            \"major\": \"Mechanical Engineering\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 27,\n            \"name\": \"Bakda Cecep Pradana\",\n            \"nim\": \"033837942\",\n            \"birth_date\": \"1999-04-13\",\n            \"address\": \"Gg. Sutarjo No. 332, Bandar Lampung 29418, Pabar\",\n            \"gender\": \"Male\",\n            \"major\": \"Electrical Engineering\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 28,\n            \"name\": \"Pranata Nababan\",\n            \"nim\": \"084114644\",\n            \"birth_date\": \"2018-08-07\",\n            \"address\": \"Dk. Hasanuddin No. 132, Tual 63436, Babel\",\n            \"gender\": \"Male\",\n            \"major\": \"Computer Science\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 29,\n            \"name\": \"Kayun Firgantoro S.Psi\",\n            \"nim\": \"626114005\",\n            \"birth_date\": \"1973-04-25\",\n            \"address\": \"Ki. Kalimantan No. 95, Tangerang 54299, Gorontalo\",\n            \"gender\": \"Male\",\n            \"major\": \"Computer Science\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 30,\n            \"name\": \"Galuh Hidayat\",\n            \"nim\": \"490527618\",\n            \"birth_date\": \"2021-04-18\",\n            \"address\": \"Dk. Bazuka Raya No. 827, Mataram 24777, Aceh\",\n            \"gender\": \"Female\",\n            \"major\": \"Electrical Engineering\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Detail Student",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3MDEyNTc2MDEsImV4cCI6MTcwMTI2MTIwMSwibmJmIjoxNzAxMjU3NjAxLCJqdGkiOiJjc09UUHhrNkdwdWd4Q2xkIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.Om3x8U24V3VWEKT_QaOrd04dBT5wI1jP6Lb-CrzZ-U4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/students/111",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"students",
+								"111"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Detail Succesfull",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/students/1",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"students",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 11:36:37 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 11:36:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Student data found\",\n    \"student\": {\n        \"id\": 1,\n        \"name\": \"Ina Yuniar\",\n        \"nim\": \"148252123\",\n        \"birth_date\": \"1999-12-24\",\n        \"address\": \"Jln. Ikan No. 357, Kotamobagu 92545, NTB\",\n        \"gender\": \"Male\",\n        \"major\": \"Software Engineering\",\n        \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n        \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n    }\n}"
+						},
+						{
+							"name": "Get Detail Student Failed (id not found)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/students/111",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"students",
+										"111"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 11:36:56 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 11:36:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Student not found\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Create Student",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3MDEyNTc2MDEsImV4cCI6MTcwMTI2MTIwMSwibmJmIjoxNzAxMjU3NjAxLCJqdGkiOiJjc09UUHhrNkdwdWd4Q2xkIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.Om3x8U24V3VWEKT_QaOrd04dBT5wI1jP6Lb-CrzZ-U4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Rizky Al Arief",
+									"type": "text"
+								},
+								{
+									"key": "nim",
+									"value": "2110511069",
+									"type": "text"
+								},
+								{
+									"key": "birth_date",
+									"value": "2003-01-06",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "Puri Citayam Permai",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "Male",
+									"type": "text"
+								},
+								{
+									"key": "major",
+									"value": "Informatics",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/students",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"students"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Student Failed (Invalid form)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Rizky Al Arief",
+											"type": "text"
+										},
+										{
+											"key": "nim",
+											"value": "2110511069",
+											"type": "text"
+										},
+										{
+											"key": "birth_date",
+											"value": "06-01-2003",
+											"type": "text"
+										},
+										{
+											"key": "address",
+											"value": "Puri Citayam Permai",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "Male",
+											"type": "text"
+										},
+										{
+											"key": "major",
+											"value": "Informatics",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}/api/students",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"students"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 11:39:36 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 11:39:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Failed to create student: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect date value: '06-01-2003' for column `dot_backend`.`students`.`birth_date` at row 1 (SQL: insert into `students` (`name`, `nim`, `birth_date`, `address`, `gender`, `major`, `updated_at`, `created_at`) values (Rizky Al Arief, 2110511069, 06-01-2003, Puri Citayam Permai, Male, Informatics, 2023-11-29 11:39:36, 2023-11-29 11:39:36))\"\n}"
+						},
+						{
+							"name": "Create Student Succesfull",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Rizky Al Arief",
+											"type": "text"
+										},
+										{
+											"key": "nim",
+											"value": "2110511069",
+											"type": "text"
+										},
+										{
+											"key": "birth_date",
+											"value": "2003-01-06",
+											"type": "text"
+										},
+										{
+											"key": "address",
+											"value": "Puri Citayam Permai",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "Male",
+											"type": "text"
+										},
+										{
+											"key": "major",
+											"value": "Informatics",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}/api/students",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"students"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 11:41:20 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 11:41:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Student created successfully\",\n    \"student\": {\n        \"name\": \"Rizky Al Arief\",\n        \"nim\": \"2110511069\",\n        \"birth_date\": \"2003-01-06\",\n        \"address\": \"Puri Citayam Permai\",\n        \"gender\": \"Male\",\n        \"major\": \"Informatics\",\n        \"updated_at\": \"2023-11-29T11:41:20.000000Z\",\n        \"created_at\": \"2023-11-29T11:41:20.000000Z\",\n        \"id\": 31\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Student",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3MDEyNTc2MDEsImV4cCI6MTcwMTI2MTIwMSwibmJmIjoxNzAxMjU3NjAxLCJqdGkiOiJjc09UUHhrNkdwdWd4Q2xkIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.Om3x8U24V3VWEKT_QaOrd04dBT5wI1jP6Lb-CrzZ-U4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Rizky Al Arief",
+									"type": "text"
+								},
+								{
+									"key": "nim",
+									"value": "2110511069",
+									"type": "text"
+								},
+								{
+									"key": "birth_date",
+									"value": "2003-01-06",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "Puri Citayam Permai",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "Male",
+									"type": "text"
+								},
+								{
+									"key": "major",
+									"value": "Informatics Engineering",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/students/311",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"students",
+								"311"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Student Succesfull",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Rizky Al Arief",
+											"type": "text"
+										},
+										{
+											"key": "nim",
+											"value": "2110511069",
+											"type": "text"
+										},
+										{
+											"key": "birth_date",
+											"value": "2003-01-06",
+											"type": "text"
+										},
+										{
+											"key": "address",
+											"value": "Puri Citayam Permai",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "Male",
+											"type": "text"
+										},
+										{
+											"key": "major",
+											"value": "Informatics Engineering",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}/api/students/31",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"students",
+										"31"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 11:44:00 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 11:44:00 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Student updated successfully\",\n    \"student\": {\n        \"id\": 31,\n        \"name\": \"Rizky Al Arief\",\n        \"nim\": \"2110511069\",\n        \"birth_date\": \"2003-01-06\",\n        \"address\": \"Puri Citayam Permai\",\n        \"gender\": \"Male\",\n        \"major\": \"Informatics Engineering\",\n        \"created_at\": \"2023-11-29T11:41:20.000000Z\",\n        \"updated_at\": \"2023-11-29T11:44:00.000000Z\"\n    }\n}"
+						},
+						{
+							"name": "Update Student Failed (id not found)",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Rizky Al Arief",
+											"type": "text"
+										},
+										{
+											"key": "nim",
+											"value": "2110511069",
+											"type": "text"
+										},
+										{
+											"key": "birth_date",
+											"value": "2003-01-06",
+											"type": "text"
+										},
+										{
+											"key": "address",
+											"value": "Puri Citayam Permai",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "Male",
+											"type": "text"
+										},
+										{
+											"key": "major",
+											"value": "Informatics Engineering",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}/api/students/311",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"students",
+										"311"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 11:44:34 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 11:44:34 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Student not found\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Student",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3MDEyNTc2MDEsImV4cCI6MTcwMTI2MTIwMSwibmJmIjoxNzAxMjU3NjAxLCJqdGkiOiJjc09UUHhrNkdwdWd4Q2xkIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.Om3x8U24V3VWEKT_QaOrd04dBT5wI1jP6Lb-CrzZ-U4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/students/311",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"students",
+								"311"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Student Succesfull",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/students/31",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"students",
+										"31"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 11:45:41 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 11:45:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Student deleted successfully\"\n}"
+						},
+						{
+							"name": "Delete Student Failed (id not found)",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/students/311",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"students",
+										"311"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 11:45:58 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 11:45:58 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Student not found\"\n}"
+						}
+					]
+				}
+			],
+			"description": "Everything about Students"
+		},
+		{
+			"name": "Courses",
+			"item": [
+				{
+					"name": "Get All Courses",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3MDEyNTA2NTMsImV4cCI6MTcwMTI1NDI1MywibmJmIjoxNzAxMjUwNjUzLCJqdGkiOiJveU1vYkVsUzVsaEdrS2JBIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.oTdsdG_bprfTxkk86ftv6fnKwoYpOjhIfDhg32RxlTA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/courses",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"courses"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All Courses Succesfull",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/courses",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"courses"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 09:37:43 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 09:37:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Course data found\",\n    \"courses\": [\n        {\n            \"id\": 1,\n            \"name\": \"Data Structure\",\n            \"credit\": 1,\n            \"description\": \"Dolores occaecati illum aut eum.\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Algorithms Basic\",\n            \"credit\": 4,\n            \"description\": \"Repellat a eveniet nemo sit sint accusamus.\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Machine Learning\",\n            \"credit\": 2,\n            \"description\": \"Fugiat esse modi aliquam dolore.\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Web Development Fundamentals\",\n            \"credit\": 4,\n            \"description\": \"Est dolor dolorem molestias eveniet praesentium voluptatem aliquam.\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Database Management Systems\",\n            \"credit\": 2,\n            \"description\": \"Omnis quasi maiores illo accusantium maxime.\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 6,\n            \"name\": \"Computer Networks\",\n            \"credit\": 5,\n            \"description\": \"Quam quod aut aut delectus voluptas quia magnam.\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 7,\n            \"name\": \"Software Engineering Principles\",\n            \"credit\": 1,\n            \"description\": \"Corporis occaecati nisi animi ut adipisci quia.\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 8,\n            \"name\": \"Artificial Intelligence\",\n            \"credit\": 3,\n            \"description\": \"Saepe sequi tenetur repudiandae vitae rerum.\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 9,\n            \"name\": \"Cybersecurity Fundamentals\",\n            \"credit\": 4,\n            \"description\": \"Rerum exercitationem sint nihil id facere.\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 10,\n            \"name\": \"Operating Systems\",\n            \"credit\": 1,\n            \"description\": \"Ea ab nostrum voluptatum fuga optio ullam debitis.\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 11,\n            \"name\": \"Mobile App Development\",\n            \"credit\": 4,\n            \"description\": \"Qui dolore animi ullam perspiciatis aut.\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 12,\n            \"name\": \"Data Science and Analytics\",\n            \"credit\": 5,\n            \"description\": \"Minus odit laborum totam nostrum.\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 13,\n            \"name\": \"Computer Graphics\",\n            \"credit\": 1,\n            \"description\": \"Ipsa alias vel fugiat aliquid reprehenderit et.\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 14,\n            \"name\": \"Game Development\",\n            \"credit\": 4,\n            \"description\": \"Libero necessitatibus voluptas et est cum dolores eius.\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 15,\n            \"name\": \"Cloud Computing\",\n            \"credit\": 3,\n            \"description\": \"Sed earum omnis ipsa.\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 16,\n            \"name\": \"Internet of Things (IoT)\",\n            \"credit\": 1,\n            \"description\": \"Laudantium iusto ad ullam quia animi dolore.\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 17,\n            \"name\": \"Blockchain Technology\",\n            \"credit\": 4,\n            \"description\": \"Tempore odit consequatur at adipisci veniam officia.\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 18,\n            \"name\": \"Robotics\",\n            \"credit\": 4,\n            \"description\": \"Et enim consectetur velit iure enim dolores.\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 19,\n            \"name\": \"Human-Computer Interaction\",\n            \"credit\": 5,\n            \"description\": \"Repellat optio totam eum illum.\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 20,\n            \"name\": \"Big Data Technologies\",\n            \"credit\": 3,\n            \"description\": \"Quod labore repudiandae necessitatibus qui maxime doloribus.\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Detail Course",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3MDEyNTA2NTMsImV4cCI6MTcwMTI1NDI1MywibmJmIjoxNzAxMjUwNjUzLCJqdGkiOiJveU1vYkVsUzVsaEdrS2JBIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.oTdsdG_bprfTxkk86ftv6fnKwoYpOjhIfDhg32RxlTA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/courses/22",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"courses",
+								"22"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Detail Course Succesfull",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/courses/1",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"courses",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 09:43:19 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 09:43:19 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Course data found\",\n    \"courses\": {\n        \"id\": 1,\n        \"name\": \"Data Structure\",\n        \"credit\": 1,\n        \"description\": \"Dolores occaecati illum aut eum.\",\n        \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n        \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n    }\n}"
+						},
+						{
+							"name": "Get Detail Course Failed (id not found)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/courses/111",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"courses",
+										"111"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 09:44:00 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 09:44:00 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"course not found\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Create Course",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3MDEyNTA2NTMsImV4cCI6MTcwMTI1NDI1MywibmJmIjoxNzAxMjUwNjUzLCJqdGkiOiJveU1vYkVsUzVsaEdrS2JBIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.oTdsdG_bprfTxkk86ftv6fnKwoYpOjhIfDhg32RxlTA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Kalkulus",
+									"type": "text"
+								},
+								{
+									"key": "credit",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Matematika Lanjutan Sub materi limit,integral ssb",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/courses",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"courses"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Course Succesfull",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/x-www-form-urlencoded",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Kalkulus",
+											"type": "text"
+										},
+										{
+											"key": "credit",
+											"value": "5",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Matematika Lanjutan Sub materi limit,integral ssb",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}/api/courses",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"courses"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 10:01:57 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 10:01:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Course created successfully\",\n    \"course\": {\n        \"name\": \"Kalkulus\",\n        \"credit\": \"5\",\n        \"description\": \"Matematika Lanjutan Sub materi limit,integral ssb\",\n        \"updated_at\": \"2023-11-29T10:01:56.000000Z\",\n        \"created_at\": \"2023-11-29T10:01:56.000000Z\",\n        \"id\": 21\n    }\n}"
+						},
+						{
+							"name": "Create Course Failed (Field Empty)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/x-www-form-urlencoded",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Kalkulus",
+											"type": "text"
+										},
+										{
+											"key": "Credit",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Matematika Lanjutan Sub materi limit,integral ssb",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}/api/courses",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"courses"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 10:02:20 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 10:02:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": {\n        \"credit\": [\n            \"The credit field is required.\"\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Course",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3MDEyNjM2ODAsImV4cCI6MTcwMTI2NzI4MCwibmJmIjoxNzAxMjYzNjgwLCJqdGkiOiJhNTFHamYzc3NOWnMxV0h5Iiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.UJspqecQ4vDxfuLzMvRMw5-XzC18bNlG3qRlSx1EbcM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Kalkulus 2",
+									"type": "text"
+								},
+								{
+									"key": "credit",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Kalkulus mantap euy",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/courses/22",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"courses",
+								"22"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Course Successfull",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Kalkulus 2",
+											"type": "text"
+										},
+										{
+											"key": "credit",
+											"value": "3",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Kalkulus mantap euy",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}/api/courses/22",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"courses",
+										"22"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 13:24:22 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 13:24:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Course updated successfully\",\n    \"course\": {\n        \"id\": 22,\n        \"name\": \"Kalkulus 2\",\n        \"credit\": \"3\",\n        \"description\": \"Kalkulus mantap euy\",\n        \"created_at\": \"2023-11-29T10:08:28.000000Z\",\n        \"updated_at\": \"2023-11-29T13:24:22.000000Z\"\n    }\n}"
+						},
+						{
+							"name": "Update Course Failed(invalid form)",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Kalkulus 2",
+											"type": "text"
+										},
+										{
+											"key": "credit",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Kalkulus mantap euy",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}/api/courses/22",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"courses",
+										"22"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 13:24:53 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 13:24:53 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": {\n        \"credit\": [\n            \"The credit field is required.\"\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Course",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3MDEyNTA2NTMsImV4cCI6MTcwMTI1NDI1MywibmJmIjoxNzAxMjUwNjUzLCJqdGkiOiJveU1vYkVsUzVsaEdrS2JBIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.oTdsdG_bprfTxkk86ftv6fnKwoYpOjhIfDhg32RxlTA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/courses/222",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"courses",
+								"222"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Course Succesfull",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/courses/21",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"courses",
+										"21"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 10:07:23 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 10:07:23 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Course deleted successfully\"\n}"
+						},
+						{
+							"name": "Delete Course Failed (Id not found)",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/courses/222",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"courses",
+										"222"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 10:07:51 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 10:07:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Course not found\"\n}"
+						}
+					]
+				}
+			],
+			"description": "Everything about Courses"
+		},
+		{
+			"name": "Grades",
+			"item": [
+				{
+					"name": "Get All Grades",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3MDEyNTc2MDEsImV4cCI6MTcwMTI2MTIwMSwibmJmIjoxNzAxMjU3NjAxLCJqdGkiOiJjc09UUHhrNkdwdWd4Q2xkIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.Om3x8U24V3VWEKT_QaOrd04dBT5wI1jP6Lb-CrzZ-U4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/grades",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"grades"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All Grades Succesfull",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/grades",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"grades"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 12:39:27 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 12:39:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"grade data found\",\n    \"grades\": [\n        {\n            \"id\": 1,\n            \"student_id\": 27,\n            \"course_id\": 7,\n            \"grade\": \"D+\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 2,\n            \"student_id\": 21,\n            \"course_id\": 14,\n            \"grade\": \"C+\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 3,\n            \"student_id\": 22,\n            \"course_id\": 7,\n            \"grade\": \"C+\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 4,\n            \"student_id\": 25,\n            \"course_id\": 15,\n            \"grade\": \"A\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 5,\n            \"student_id\": 14,\n            \"course_id\": 13,\n            \"grade\": \"D+\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 6,\n            \"student_id\": 2,\n            \"course_id\": 1,\n            \"grade\": \"C\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 7,\n            \"student_id\": 10,\n            \"course_id\": 2,\n            \"grade\": \"A\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 8,\n            \"student_id\": 20,\n            \"course_id\": 17,\n            \"grade\": \"B\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 9,\n            \"student_id\": 1,\n            \"course_id\": 19,\n            \"grade\": \"A\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 10,\n            \"student_id\": 21,\n            \"course_id\": 4,\n            \"grade\": \"C-\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 11,\n            \"student_id\": 7,\n            \"course_id\": 16,\n            \"grade\": \"D-\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 12,\n            \"student_id\": 1,\n            \"course_id\": 16,\n            \"grade\": \"A-\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 13,\n            \"student_id\": 26,\n            \"course_id\": 12,\n            \"grade\": \"B+\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 14,\n            \"student_id\": 12,\n            \"course_id\": 5,\n            \"grade\": \"B\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 15,\n            \"student_id\": 4,\n            \"course_id\": 10,\n            \"grade\": \"C+\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 16,\n            \"student_id\": 6,\n            \"course_id\": 2,\n            \"grade\": \"B-\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 17,\n            \"student_id\": 24,\n            \"course_id\": 19,\n            \"grade\": \"D-\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 18,\n            \"student_id\": 9,\n            \"course_id\": 19,\n            \"grade\": \"C\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 19,\n            \"student_id\": 26,\n            \"course_id\": 6,\n            \"grade\": \"A-\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 20,\n            \"student_id\": 17,\n            \"course_id\": 9,\n            \"grade\": \"D-\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 21,\n            \"student_id\": 3,\n            \"course_id\": 18,\n            \"grade\": \"D+\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 22,\n            \"student_id\": 18,\n            \"course_id\": 18,\n            \"grade\": \"B\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 23,\n            \"student_id\": 6,\n            \"course_id\": 16,\n            \"grade\": \"B\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 24,\n            \"student_id\": 18,\n            \"course_id\": 7,\n            \"grade\": \"D-\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 25,\n            \"student_id\": 22,\n            \"course_id\": 7,\n            \"grade\": \"B+\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 26,\n            \"student_id\": 25,\n            \"course_id\": 3,\n            \"grade\": \"E\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 27,\n            \"student_id\": 26,\n            \"course_id\": 8,\n            \"grade\": \"E\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 28,\n            \"student_id\": 17,\n            \"course_id\": 11,\n            \"grade\": \"D+\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 29,\n            \"student_id\": 25,\n            \"course_id\": 2,\n            \"grade\": \"A\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 30,\n            \"student_id\": 15,\n            \"course_id\": 19,\n            \"grade\": \"B+\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 31,\n            \"student_id\": 2,\n            \"course_id\": 9,\n            \"grade\": \"C+\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 32,\n            \"student_id\": 1,\n            \"course_id\": 14,\n            \"grade\": \"A\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 33,\n            \"student_id\": 24,\n            \"course_id\": 9,\n            \"grade\": \"C+\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 34,\n            \"student_id\": 23,\n            \"course_id\": 10,\n            \"grade\": \"D-\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 35,\n            \"student_id\": 18,\n            \"course_id\": 16,\n            \"grade\": \"C\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 36,\n            \"student_id\": 18,\n            \"course_id\": 11,\n            \"grade\": \"E\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 37,\n            \"student_id\": 5,\n            \"course_id\": 17,\n            \"grade\": \"A\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 38,\n            \"student_id\": 4,\n            \"course_id\": 14,\n            \"grade\": \"A-\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 39,\n            \"student_id\": 5,\n            \"course_id\": 11,\n            \"grade\": \"D\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 40,\n            \"student_id\": 8,\n            \"course_id\": 8,\n            \"grade\": \"E\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 41,\n            \"student_id\": 26,\n            \"course_id\": 2,\n            \"grade\": \"A\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 42,\n            \"student_id\": 14,\n            \"course_id\": 11,\n            \"grade\": \"D-\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 43,\n            \"student_id\": 7,\n            \"course_id\": 10,\n            \"grade\": \"D+\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 44,\n            \"student_id\": 16,\n            \"course_id\": 15,\n            \"grade\": \"D-\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 45,\n            \"student_id\": 27,\n            \"course_id\": 3,\n            \"grade\": \"D+\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 46,\n            \"student_id\": 18,\n            \"course_id\": 10,\n            \"grade\": \"C\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 47,\n            \"student_id\": 11,\n            \"course_id\": 15,\n            \"grade\": \"A-\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 48,\n            \"student_id\": 11,\n            \"course_id\": 5,\n            \"grade\": \"B\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 49,\n            \"student_id\": 16,\n            \"course_id\": 6,\n            \"grade\": \"D+\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 50,\n            \"student_id\": 17,\n            \"course_id\": 17,\n            \"grade\": \"D+\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 51,\n            \"student_id\": 18,\n            \"course_id\": 15,\n            \"grade\": \"C\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 52,\n            \"student_id\": 2,\n            \"course_id\": 20,\n            \"grade\": \"A\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 53,\n            \"student_id\": 11,\n            \"course_id\": 8,\n            \"grade\": \"C\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 54,\n            \"student_id\": 23,\n            \"course_id\": 9,\n            \"grade\": \"A-\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 55,\n            \"student_id\": 16,\n            \"course_id\": 6,\n            \"grade\": \"B\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 56,\n            \"student_id\": 4,\n            \"course_id\": 6,\n            \"grade\": \"C\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 57,\n            \"student_id\": 9,\n            \"course_id\": 1,\n            \"grade\": \"D\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 58,\n            \"student_id\": 23,\n            \"course_id\": 1,\n            \"grade\": \"B\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 59,\n            \"student_id\": 25,\n            \"course_id\": 11,\n            \"grade\": \"C-\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        },\n        {\n            \"id\": 60,\n            \"student_id\": 18,\n            \"course_id\": 10,\n            \"grade\": \"A-\",\n            \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n            \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Detail Grade",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3MDEyNTc2MDEsImV4cCI6MTcwMTI2MTIwMSwibmJmIjoxNzAxMjU3NjAxLCJqdGkiOiJjc09UUHhrNkdwdWd4Q2xkIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.Om3x8U24V3VWEKT_QaOrd04dBT5wI1jP6Lb-CrzZ-U4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/grades/111",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"grades",
+								"111"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Detail Grade Succesfull",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/grades/1",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"grades",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 12:40:07 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 12:40:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"grade data found\",\n    \"grades\": {\n        \"id\": 1,\n        \"student_id\": 27,\n        \"course_id\": 7,\n        \"grade\": \"D+\",\n        \"created_at\": \"2023-11-29T03:39:13.000000Z\",\n        \"updated_at\": \"2023-11-29T03:39:13.000000Z\"\n    }\n}"
+						},
+						{
+							"name": "Get Detail Grade Failed (id not found)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/grades/111",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"grades",
+										"111"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 12:40:34 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 12:40:34 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"grade not found\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Create Grade",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "student_id",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "course_id",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "grade",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/grades",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"grades"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Grade Succesfull",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "student_id",
+											"value": "10",
+											"type": "text"
+										},
+										{
+											"key": "course_id",
+											"value": "5",
+											"type": "text"
+										},
+										{
+											"key": "grade",
+											"value": "A",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}/api/grades",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"grades"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 12:43:24 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 12:43:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Grade created successfully\",\n    \"grade\": {\n        \"student_id\": \"10\",\n        \"course_id\": \"5\",\n        \"grade\": \"A\",\n        \"updated_at\": \"2023-11-29T12:43:24.000000Z\",\n        \"created_at\": \"2023-11-29T12:43:24.000000Z\",\n        \"id\": 61\n    }\n}"
+						},
+						{
+							"name": "Create Grade Failed (invalid from)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "student_id",
+											"value": "10",
+											"type": "text"
+										},
+										{
+											"key": "course_id",
+											"value": "5",
+											"type": "text"
+										},
+										{
+											"key": "grade",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}/api/grades",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"grades"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 12:43:59 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 12:43:59 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": {\n        \"grade\": [\n            \"The grade field is required.\"\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Grade",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "student_id",
+									"value": "12",
+									"type": "text"
+								},
+								{
+									"key": "course_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "grade",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/grades/61",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"grades",
+								"61"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Grade Succesfull",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "student_id",
+											"value": "10",
+											"type": "text"
+										},
+										{
+											"key": "course_id",
+											"value": "5",
+											"type": "text"
+										},
+										{
+											"key": "grade",
+											"value": "A-",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}/api/grades/61",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"grades",
+										"61"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 12:45:56 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 12:45:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Grade updated successfully\",\n    \"grade\": {\n        \"id\": 61,\n        \"student_id\": \"10\",\n        \"course_id\": \"5\",\n        \"grade\": \"A-\",\n        \"created_at\": \"2023-11-29T12:43:24.000000Z\",\n        \"updated_at\": \"2023-11-29T12:45:56.000000Z\"\n    }\n}"
+						},
+						{
+							"name": "Update Grade Failed (invalid form)",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "student_id",
+											"value": "12",
+											"type": "text"
+										},
+										{
+											"key": "course_id",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "grade",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}/api/grades/61",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"grades",
+										"61"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 12:46:22 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 12:46:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": {\n        \"course_id\": [\n            \"The course id field is required.\"\n        ],\n        \"grade\": [\n            \"The grade field is required.\"\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Grade",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3MDEyNTc2MDEsImV4cCI6MTcwMTI2MTIwMSwibmJmIjoxNzAxMjU3NjAxLCJqdGkiOiJjc09UUHhrNkdwdWd4Q2xkIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.Om3x8U24V3VWEKT_QaOrd04dBT5wI1jP6Lb-CrzZ-U4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/grades/62",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"grades",
+								"62"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Succesfull",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/grades/61",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"grades",
+										"61"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 12:47:05 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 12:47:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Grade deleted successfully\"\n}"
+						},
+						{
+							"name": "Delete Grade Failed(id not found)",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/grades/62",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"grades",
+										"62"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 12:48:03 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 12:48:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Grade not found\"\n}"
+						}
+					]
+				}
+			],
+			"description": "Everything about Grades"
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "http://127.0.0.1:8000",
+			"type": "string"
+		}
+	]
+}

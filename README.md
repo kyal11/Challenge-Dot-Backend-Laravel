@@ -8,12 +8,17 @@ Aplikasi CRUD yang menggunakan studi kasus sistem akademik universitas dimana pa
 - Admin Panel (Development)
 - CRUD Model
 ## Model
+<img src="https://github.com/kyal11/Challenge-Dot-Backend-Laravel/blob/main/Model-Relasi.png" width="500" />
 
 ## Screenshot
+<img src="https://github.com/kyal11/Challenge-Dot-Backend-Laravel/blob/main/Dashboard-screenshot.png" width="500" /> <img src="https://github.com/kyal11/Challenge-Dot-Backend-Laravel/blob/main/Student-Screenshot.png" width="500" /> <img src="https://github.com/kyal11/Challenge-Dot-Backend-Laravel/blob/main/Login-Screenshot.png" width="300" /> <img src="https://github.com/kyal11/Challenge-Dot-Backend-Laravel/blob/main/Register-Screenshot.png" width="500" /> 
+
+## Documentary
+[Documentary with Postman](https://documenter.getpostman.com/view/29947879/2s9YeHaBD9)
 
 ## Depedency
 - Faker (Using for build dummy data)
-- tymon/jwt-auth ((Using for Authentication)
+- tymon/jwt-auth (Using for Authentication)
 - AdminLte (Using for templete Admin Panel)
 - laravel built-in dependencies
 ## Installing
