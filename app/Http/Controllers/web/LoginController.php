@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Http\Request;
+use Tymon\JWTAuth\Facades\JWTAuth;
+
 class LoginController extends Controller
 {
     
@@ -17,11 +19,11 @@ class LoginController extends Controller
         $API_URL_LOGIN = "http://127.0.0.1:8000/api/auth/login";
     
         try {
+            
             $response = Http::post($API_URL_LOGIN, [
                 'email' => $request->input('email'),
                 'password' => $request->input('password'),
             ]);
-    
             $data = $response->json();
     
             if (isset($data['access_token'])) {
@@ -44,7 +46,6 @@ class LoginController extends Controller
 
     try {
         $response = Http::withHeaders(['Authorization' => 'Bearer ' . $jwtToken])->post('http://127.0.0.1:8000/api/auth/logout');
-        cookie()->queue(cookie()->forget('jwt_token'));
 
         // Add a script to remove the token from local storage
         $removeTokenScript = '<script>localStorage.removeItem("jwt_token");</script>';

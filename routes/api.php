@@ -35,51 +35,50 @@ Route::group([
     'middleware' => 'api',
     'prefix' => 'auth'
 ], function () {
-    Route::post('register',[AuthController::class, 'register'])->name('register');
-    Route::post('login',[AuthController::class, 'login'])->name('login');
-    Route::post('logout',[AuthController::class, 'logout'])->name('logout');
-    Route::post('account',[AuthController::class, 'account'])->name('account');
+    Route::post('register',[AuthController::class, 'register']);
+    Route::post('login',[AuthController::class, 'login']);
+    Route::post('logout',[AuthController::class, 'logout']);
+    Route::post('account',[AuthController::class, 'account']);
 });
 
 Route::group([
     'middleware' => 'api',
     'prefix' => 'users'
 ], function () {
-    Route::get('/', [UserController::class, 'index'])->name('get-all-user');
-    Route::post('/', [UserController::class, 'store'])->name('add-user');
-    Route::patch('/{id}', [UserController::class, 'update'])->name('update-user');
-    Route::delete('/{id}', [UserController::class, 'delete'])->name('delete-user');
+    Route::get('/', [UserController::class, 'index']);
+    Route::post('/', [UserController::class, 'store']);
+    Route::patch('/{id}', [UserController::class, 'update']);
+    Route::delete('/{id}', [UserController::class, 'delete']);
 });
-
 Route::group([
     'middleware' => 'api',
     'prefix' => 'courses'
 ], function () {
-    Route::get('/', [CourseController::class, 'index'])->name('get-all-course');
-    Route::get('/{id}', [CourseController::class, 'show'])->name('get-detail-corse');
-    Route::post('/', [CourseController::class, 'store'])->name('create-course');
-    Route::put('/{id}', [CourseController::class, 'update'])->name('update-course');
-    Route::delete('/{id}', [CourseController::class, 'destroy'])->name('delete-course');
+    Route::get('/', [CourseController::class, 'index']);
+    Route::get('/{id}', [CourseController::class, 'show']);
+    Route::post('/', [CourseController::class, 'store']);
+    Route::put('/{id}', [CourseController::class, 'update']);
+    Route::delete('/{id}', [CourseController::class, 'destroy']);
 });
 
 Route::group([
     'middleware' => 'api',
     'prefix' => 'students'
 ], function () {
-    Route::get('/', [StudentController::class, 'index'])->name('get-all-students');
-    Route::get('/{id}', [StudentController::class, 'show'])->name('get-detail-student');
-    Route::post('/', [StudentController::class, 'store'])->name('create-student');
-    Route::put('/{id}', [StudentController::class, 'update'])->name('update-student');
-    Route::delete('/{id}', [StudentController::class, 'destroy'])->name('delete-student');
+    Route::get('/', [StudentController::class, 'index']);
+    Route::get('/{id}', [StudentController::class, 'show']);
+    Route::post('/', [StudentController::class, 'store']);
+    Route::put('/{id}', [StudentController::class, 'update']);
+    Route::delete('/{id}', [StudentController::class, 'destroy']);
 });
 
 Route::group([
     'middleware' => 'api',
     'prefix' => 'grades'
 ], function () {
-    Route::get('/', [GradesController::class, 'index'])->name('get-all-grade');
-    Route::get('/{id}', [GradesController::class, 'show'])->name('get-detail-grade');
-    Route::post('/', [GradesController::class, 'store'])->name('create-grade');
-    Route::put('/{id}', [GradesController::class, 'update'])->name('update-grade');
-    Route::delete('/{id}', [GradesController::class, 'destroy'])->name('delete-grade');
+    Route::get('/', [GradesController::class, 'index']);
+    Route::get('/{id}', [GradesController::class, 'show']);
+    Route::post('/', [GradesController::class, 'store']);
+    Route::put('/{id}', [GradesController::class, 'update']);
+    Route::delete('/{id}', [GradesController::class, 'destroy']);
 });

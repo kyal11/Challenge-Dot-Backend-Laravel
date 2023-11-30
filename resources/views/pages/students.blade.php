@@ -12,9 +12,9 @@
 @stop
 
 @section('body')
+<div class="wrapper">
     @include('components.header')
     @include('components.sidebar')
-
     <div class="content-wrapper">
         <div class="content-header">
             <div class="container-fluid">
@@ -47,37 +47,46 @@
                         <tr>
                             <th style="width: 5%">No</th>
                             <th style="width: 10%">Name</th>
-                            <th style="width: 10%">nim</th>
+                            <th style="width: 10%">NIM</th>
                             <th style="width: 15%">Birth Date</th>
                             <th style="width: 20%">Address</th>
                             <th style="width: 5%">Gender</th>
                             <th style="width: 15%">Major</th>
-                            <th style="width: 20%">Action</th>
+                            {{-- <th style="width: 20%">Action</th> --}}
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- Your student rows go here -->
-                        <tr>
-                            <!-- Example student row -->
-                            <td>#</td>
-                            <td>Student Name</td>
-                            <td>NIM</td>
-                            <td>Birth Date</td>
-                            <td>Address</td>
-                            <td>Gender</td>
-                            <td>Major</td>
-                            <td class="project-actions text-right">
-                                <a class="btn btn-primary btn-sm" href="#"><i class="fas fa-folder"></i>View</a>
-                                <a class="btn btn-info btn-sm" href="#"><i class="fas fa-pencil-alt"></i>Edit</a>
-                                <a class="btn btn-danger btn-sm" href="#"><i class="fas fa-trash"></i>Delete</a>
-                            </td>
-                        </tr>
-                        <!-- Repeat similar rows for other students -->
+
+                        @foreach($data as $index => $student)
+                            <tr>
+                                <td>{{ $index + 1 }}</td>
+                                <td>{{ $student['name'] }}</td>
+                                <td>{{ $student['nim'] }}</td>
+                                <td>{{ $student['birth_date'] }}</td>
+                                <td>{{ $student['address'] }}</td>
+                                <td>{{ $student['gender'] }}</td>
+                                <td>{{ $student['major'] }}</td>
+                                {{-- <td class="project-actions text-right">
+                                    <form action="{{ route('update-student', ['id' => $student['id']]) }}" method="post">
+                                        @csrf
+                                        @method('put')
+                                        <button type="submit" class="btn btn-info btn-sm"><i class="fas fa-pencil-alt"></i>Edit</button>
+                                    </form>
+                                    <form action="{{ route('delete-student', ['id' => $student['id']]) }}" method="post">
+                                        @csrf
+                                        @method('delete')
+                                        <button type="submit" class="btn btn-danger btn-sm"  ><i class="fas fa-trash"></i>Delete</button>
+                                    </form>
+                                    
+                                </td> --}}
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
+</div>
 @stop
 
 @section('adminlte_js')

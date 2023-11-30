@@ -17,7 +17,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/', function () {
+    return view('auth.login');
+});
 
 Route::get('login', [LoginController::class,'showLoginForm'])->name('show-login');
 Route::post('login',[LoginController::class,'login'])->name('login');
@@ -26,14 +28,17 @@ Route::get('register',[RegisterController::class,'showRegisterForm'])->name('sho
 Route::post('register',[RegisterController::class,'register'])->name('register');
 
 
-Route::group(['web' => 'jwt.auth'], function () {
-    Route::get('/dashboard', function () {
-        return view('welcome');
-    })->name('dashboard');
-    
-    Route::get('/students',[StudentController::class,'show'])->name('show-student');
-    Route::get('/courses',[CourseController::class,'show'])->name('show-course');
-    Route::get('/grades',[GradeController::class,'show'])->name('show-grade');
 
-    Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
-});
+ Route::get('/dashboard', function () {
+        return view('welcome');
+})->name('dashboard');
+
+Route::get('/students', [StudentController::class, 'show'])->name('show-student');
+// Route::put('/students/{id}', [StudentController::class, 'update'])->name('update-student');
+// Route::delete('/students/{id}', [StudentController::class, 'delete'])->name('delete-student');
+
+Route::get('/courses', [CourseController::class, 'show'])->name('show-course');
+Route::get('/grades', [GradeController::class, 'show'])->name('show-grade');
+
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+

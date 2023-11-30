@@ -18,17 +18,36 @@ class JwtMiddleware
     public function handle($request, Closure $next)
     {
         try {
-            $token = cookie('jwt_token');
-
+            // Retrieve the JWT token from local storage
+            $token = $this->getJwtTokenFromLocalStorage();
+       
             if (!$token) {
                 return redirect()->route('show-login')->with('error', 'Unauthorized. Please login again.');
             }
-            $user = JWTAuth::setToken($token)->toUser();
-            $request->merge(['auth_user' => $user]);
+
+            return $next($request);
         } catch (\Exception $e) {
             return redirect()->route('show-login')->with('error', 'Unauthorized. Please login again.');
         }
 
-        return $next($request);
+    }
+
+    /**
+     * Retrieve the JWT token from local storage using JavaScript
+     *
+     * @return string|null
+     */
+    private function getJwtTokenFromLocalStorage()
+    {
+        // Use JavaScript to get the token from local storage
+        $script = <<<SCRIPT
+        <script>
+            var token = localStorage.getItem('jwt_token');
+            document.cookie = 'jwt_token=' + token + '; path=/;';
+        </script>
+SCRIPT;
+
+        // Execute the JavaScript using Laravel's Blade directive
+        return app('blade.compiler')->compileString($script);
     }
 }

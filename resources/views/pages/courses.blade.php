@@ -12,20 +12,20 @@
 @stop
 
 @section('body')
+<div class="wrapper">
     @include('components.header')
     @include('components.sidebar')
-
     <div class="content-wrapper">
         <div class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Data Students</h1>
+                        <h1 class="m-0">Data Courses</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">Students</li>
+                            <li class="breadcrumb-item active">Courses</li>
                         </ol>
                     </div>
                 </div>
@@ -34,7 +34,7 @@
 
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Table Students</h3>
+                <h3 class="card-title">Table Courses</h3>
                 <div class="card-tools">
                     <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
                         <i class="fas fa-minus"></i>
@@ -46,38 +46,41 @@
                     <thead>
                         <tr>
                             <th style="width: 5%">No</th>
-                            <th style="width: 10%">Name</th>
-                            <th style="width: 10%">nim</th>
-                            <th style="width: 15%">Birth Date</th>
-                            <th style="width: 20%">Address</th>
-                            <th style="width: 5%">Gender</th>
-                            <th style="width: 15%">Major</th>
-                            <th style="width: 20%">Action</th>
+                            <th style="width: 35%">Name</th>
+                            <th style="width: 1%">Credit</th>
+                            <th style="width: 50%">Description</th>
+                            {{-- <th style="width: 20%">Action</th> --}}
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- Your student rows go here -->
-                        <tr>
-                            <!-- Example student row -->
-                            <td>#</td>
-                            <td>Student Name</td>
-                            <td>NIM</td>
-                            <td>Birth Date</td>
-                            <td>Address</td>
-                            <td>Gender</td>
-                            <td>Major</td>
-                            <td class="project-actions text-right">
-                                <a class="btn btn-primary btn-sm" href="#"><i class="fas fa-folder"></i>View</a>
-                                <a class="btn btn-info btn-sm" href="#"><i class="fas fa-pencil-alt"></i>Edit</a>
-                                <a class="btn btn-danger btn-sm" href="#"><i class="fas fa-trash"></i>Delete</a>
-                            </td>
-                        </tr>
-                        <!-- Repeat similar rows for other students -->
+
+                        @foreach($data as $index => $course)
+                            <tr>
+                                <td>{{ $index + 1 }}</td>
+                                <td>{{ $course['name'] }}</td>
+                                <td>{{ $course['credit'] }}</td>
+                                <td>{{ $course['description'] }}</td>
+                                {{-- <td class="project-actions text-right">
+                                    <form action="{{ route('update-student', ['id' => $student['id']]) }}" method="post">
+                                        @csrf
+                                        @method('put')
+                                        <button type="submit" class="btn btn-info btn-sm"><i class="fas fa-pencil-alt"></i>Edit</button>
+                                    </form>
+                                    <form action="{{ route('delete-student', ['id' => $student['id']]) }}" method="post">
+                                        @csrf
+                                        @method('delete')
+                                        <button type="submit" class="btn btn-danger btn-sm"  ><i class="fas fa-trash"></i>Delete</button>
+                                    </form>
+                                    
+                                </td> --}}
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
+</div>
 @stop
 
 @section('adminlte_js')

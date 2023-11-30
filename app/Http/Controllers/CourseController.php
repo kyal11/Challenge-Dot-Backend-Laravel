@@ -10,7 +10,7 @@ class CourseController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth:api');
+        $this->middleware('auth:api')->except(['index']);
     }
 
     private function validateCourse(Request $request)
