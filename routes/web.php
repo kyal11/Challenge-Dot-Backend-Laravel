@@ -34,8 +34,10 @@ Route::post('register',[RegisterController::class,'register'])->name('register')
 })->name('dashboard');
 
 Route::get('/students', [StudentController::class, 'show'])->name('show-student');
-// Route::put('/students/{id}', [StudentController::class, 'update'])->name('update-student');
-// Route::delete('/students/{id}', [StudentController::class, 'delete'])->name('delete-student');
+Route::post('/students', [StudentController::class, 'create'])->name('create-student');
+Route::get('/students/{id}', [StudentController::class, 'edit'])->name('edit-student');
+Route::put('/students/{id}', [StudentController::class, 'update'])->name('update-student');
+Route::delete('/students/{id}', [StudentController::class, 'delete'])->name('delete-student');
 
 Route::get('/courses', [CourseController::class, 'show'])->name('show-course');
 Route::get('/grades', [GradeController::class, 'show'])->name('show-grade');

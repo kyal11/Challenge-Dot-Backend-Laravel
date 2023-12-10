@@ -55,7 +55,7 @@
             </div>     
             @endif
             <div class="card-body p-0 m-3">
-                <form action="" method="post">
+                <form action="{{ route('update-student') }}" method="post">
                     @csrf
     
                     @if(Route::current()->uri == 'students/{id}')
@@ -65,7 +65,7 @@
                     <div class="mb-3 row">
                         <label for="Nama" class="col-sm-2 col-form-label">Name</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" name='name' id="name" value="{{ isset($data['name'])?$data['name']:old('name')}}">
+                            <input type="text" class="form-control" name='name' id="name" value="{{ isset($data['nama'])?$data['nama']:old('nama')}}">
                         </div>
                     </div>
                     <div class="mb-3 row">
@@ -77,7 +77,7 @@
                     <div class="mb-3 row">
                         <label for="birth_date" class="col-sm-2 col-form-label">Birth Date</label>
                         <div class="col-sm-10">
-                            <input type="date" class="form-control" name='birth_date' id="birth_date" value="{{ isset($data['birth_date'])?$data['birth_date']:old('birth_date')}}">
+                            <input type="date" class="form-control" name='birth_date' id="birth_date" value="{{ isset($data['birthdate'])?$data['birthdate']:old('birthdate')}}">
                         </div>
                     </div>
                     <div class="mb-3 row">
@@ -91,8 +91,8 @@
                         <div class="col-sm-10">
                             <select class="custom-select my-1 mr-sm-2" name="gender" id="gender">
                                 <option selected>Choose...</option>
-                                <option value="Male" {{ (isset($data['gender']) && $data['gender'] == 'Male') ? 'selected' : '' }}>Male</option>
-                                <option value="Female" {{ (isset($data['gender']) && $data['gender'] == 'Female') ? 'selected' : '' }}>Female</option>
+                                <option value="Male" {{ (isset($data['gender']) && $data['gender'] == 'Pria') ? 'selected' : '' }}>Male</option>
+                                <option value="Female" {{ (isset($data['gender']) && $data['gender'] == 'Wanita') ? 'selected' : '' }}>Female</option>
                             </select>
                         </div>
                     </div>
@@ -121,51 +121,9 @@
                     </div>
                 </form>
             </div>
-            @if (Route::current()->uri == 'students')
-                <table class="table table-striped projects">
-                    <thead>
-                        <tr>
-                            <th style="width: 5%">No</th>
-                            <th style="width: 10%">Name</th>
-                            <th style="width: 10%">NIM</th>
-                            <th style="width: 15%">Birth Date</th>
-                            <th style="width: 20%">Address</th>
-                            <th style="width: 5%">Gender</th>
-                            <th style="width: 15%">Major</th>
-                            <th style="width: 20%">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-
-                        @foreach($data as $index => $student)
-                            <tr>
-                                <td>{{ $index + 1 }}</td>
-                                <td>{{ $student['name'] }}</td>
-                                <td>{{ $student['nim'] }}</td>
-                                <td>{{ $student['birth_date'] }}</td>
-                                <td>{{ $student['address'] }}</td>
-                                <td>{{ $student['gender'] }}</td>
-                                <td>{{ $student['major'] }}</td>
-                                <td class="project-actions text-right">
-                                <a href="{{ url('students/'.$student['id']) }}" class="btn btn-info btn-sm">
-                                    <i class="fas fa-pencil-alt"></i>Edit
-                                </a>
-                                <form action="{{ route('delete-student', ['id' => $student['id']]) }}" method="post">
-                                    @csrf
-                                    @method('delete')
-                                    <button type="submit" class="btn btn-danger btn-sm"  ><i class="fas fa-trash"></i>Delete</button>
-                                </form>
-                                    
-                                </td>
-                            </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-            </div>
         </div>
     </div>
 </div>
-@endif
 @stop
 
 @section('adminlte_js')

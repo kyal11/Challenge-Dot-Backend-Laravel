@@ -45,9 +45,7 @@ class LoginController extends Controller
     $jwtToken = $request->cookie('jwt_token');
 
     try {
-        $response = Http::withHeaders(['Authorization' => 'Bearer ' . $jwtToken])->post('http://127.0.0.1:8000/api/auth/logout');
-
-        // Add a script to remove the token from local storage
+        $response = Http::post('http://127.0.0.1:8000/api/auth/logout');
         $removeTokenScript = '<script>localStorage.removeItem("jwt_token");</script>';
         $redirectScript = '<script>window.location.href = "' . route('login') . '";</script>';
         return $removeTokenScript . $redirectScript;

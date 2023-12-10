@@ -24,23 +24,57 @@ class StudentController extends Controller
             return view('pages.students')->with('error', 'An error occurred while processing the request.');
         }
     }
-    public function update() {
 
+    public function create(Request $request)
+    {
+        try {
+            $response = Http::post(self::API_URL, $request->all());
+            $data = $response->json();
+
+            if (!isset($data['status'])) {
+                return redirect()->route('show-student')->withErrors($data['error'])->withInput();
+            } else {
+                return redirect()->route('show-student')->with('success', 'Successfully Added Data Student');
+            }
+        } catch (\Exception $e) {
+            return redirect()->route('show-student')->withErrors($e->getMessage())->withInput(); 
+        }
     }
 
-    public function delete($id) {
+    public function edit(Request $request, $id) {
+        $response = Http::get(self::API_URL . "/$id", $request->all());
+        $data = $response->json();
+        return view('pages.students', ['data' => $data['student']]);
+    }
+    public function update(Request $request, $id)
+    {
+        try {
+            $response = Http::put(self::API_URL . "/$id", $request->all());
+            $data = $response->json();
+
+            if (!isset($data['status'])) {
+                return redirect()->route('show-student')->withErrors($data['error'])->withInput();
+            } else {
+                return redirect()->route('show-student')->with('success', 'Successfully Updated Data Student');
+            }
+        } catch (\Exception $e) {
+            return redirect()->route('show-student')->withErrors($e->getMessage())->withInput();
+        }
+    }
+
+    public function delete($id)
+    {
         try {
             $response = Http::delete(self::API_URL . "/$id");
             $data = $response->json();
 
-            if ($data['status'] == true) {
-                return redirect()->route('show-student')->with('success', 'Successfull Delete Data Student');
+            if (!isset($data['status'])) {
+                return redirect()->route('show-student')->withErrors($data['error'])->withInput();
             } else {
-                $error = $response->json();
-                return redirect()->route('show-student')->withErrors($error)->withInput();
+                return redirect()->route('show-student')->with('success', 'Successfully Delete Data Student');
             }
         } catch (\Exception $e) {
-            return redirect()->route('show-student')->with('error', 'An error occurred while processing the request.');
+            return redirect()->route('show-student')->withErrors($e->getMessage())->withInput(); 
         }
     }
 }

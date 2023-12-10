@@ -10,7 +10,7 @@ class StudentController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth:api')->except(['index']);
+        $this->middleware('auth:api')->except(['index','store','update','destroy','show']);
     }
 
     private function validateStudent(Request $request)
@@ -27,18 +27,23 @@ class StudentController extends Controller
         return Validator::make($request->all(), $rules);
     }
 
-    public function index()
+    public function index(Request $request)
     {
         try {
-            $student = students::all();
+            $query = students::query();
+            $name = $request->input('name');
+            if ($name) {
+                $query->where('name', 'like', '%' . $name . '%');
+            }
+            $data = $query->orderBy('name', 'asc')->get();
 
-            if (!$student) {
+            if (!$data) {
                 return response()->json(['error' => 'Student not found'], 404);
             }
             return response()->json([
                 'status' => true,
                 'message' => 'Students data found',
-                'students' => $student
+                'students' => $data
             ], 200);
         } catch (\Exception $e) {
             return response()->json(['error' => $e->getMessage()], 500);
@@ -120,7 +125,7 @@ class StudentController extends Controller
             if (!$student) {
                 return response()->json(['error' => 'Student not found'], 404);
             }
-
+            $student->grade()->delete();
             $student->delete();
 
             return response()->json([
