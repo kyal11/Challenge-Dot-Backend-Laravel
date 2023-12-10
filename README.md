@@ -11,7 +11,7 @@ Aplikasi CRUD yang menggunakan studi kasus sistem akademik universitas dimana pa
 <img src="https://github.com/kyal11/Challenge-Dot-Backend-Laravel/blob/main/Model-Relasi.png" width="500" />
 
 ## Screenshot
-<img src="https://github.com/kyal11/Challenge-Dot-Backend-Laravel/blob/main/Dashboard-screenshot.png" width="500" /> <img src="https://github.com/kyal11/Challenge-Dot-Backend-Laravel/blob/main/Student-Screenshot.png" width="500" /> <img src="https://github.com/kyal11/Challenge-Dot-Backend-Laravel/blob/main/Login-Screenshot.png" width="300" /> <img src="https://github.com/kyal11/Challenge-Dot-Backend-Laravel/blob/main/Register-Screenshot.png" width="500" /> 
+<img src="https://github.com/kyal11/Challenge-Dot-Backend-Laravel/blob/main/Dashboard-screenshot.png" width="400" /> <img src="https://github.com/kyal11/Challenge-Dot-Backend-Laravel/blob/main/Student-Screenshot.png" width="400" /> <img src="https://github.com/kyal11/Challenge-Dot-Backend-Laravel/blob/main/Login-Screenshot.png" width="400" /> <img src="https://github.com/kyal11/Challenge-Dot-Backend-Laravel/blob/main/Register-Screenshot.png" width="400" /> 
 
 ## Documentary
 [Documentary with Postman](https://documenter.getpostman.com/view/29947879/2s9YeHaBD9)
