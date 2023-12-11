@@ -10,7 +10,7 @@ class CourseController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth:api')->except(['index']);
+        $this->middleware('auth:api')->except(['index','store','update','destroy','show']);
     }
 
     private function validateCourse(Request $request)
@@ -120,7 +120,7 @@ class CourseController extends Controller
             if (!$course) {
                 return response()->json(['error' => 'Course not found'], 404);
             }
-
+            $course->grade()->delete();
             $course->delete();
 
             return response()->json([

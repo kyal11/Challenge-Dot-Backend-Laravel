@@ -41,6 +41,87 @@
                     </button>
                 </div>
             </div>
+            @if ($errors->any())
+            <div class="alert alert-danger">
+                @foreach ($errors->all() as $item)
+                <li>{{$item}}</li>
+                 @endforeach                    
+            </div>
+            @endif
+
+            @if (session()->has('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>     
+            @endif
+
+        <div class="card-body p-0 m-3">
+                <form action="" method="post">
+                    @csrf
+    
+                    @if(Route::current()->uri == 'grades/{id}')
+                    @method('put')
+                    @endif
+
+                    <div class="mb-3 row">
+                        <label for="student" class="col-sm-2 col-form-label">Student</label>
+                        <div class="col-sm-10">
+                            <select class="form-control" name="student_id" id="student_id">
+                                <option  selected>Choose...</option>
+                                @foreach($data as $student)
+                                    <option value="{{ $student['student_id'] }}" {{ (isset($data['student_id']) && $data['student_id'] == $student['student_name']) ? 'selected' : '' }}>
+                                        {{ $student['student_name'] }}
+                                    </option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3 row">
+                        <label for="course" class="col-sm-2 col-form-label">Course</label>
+                        <div class="col-sm-10">
+                            <select class="form-control" name="course_id" id="course_id">
+                                <option  selected>Choose...</option>
+                                @foreach($data as $course)
+                                    <option value="{{ $course['course_id'] }}" {{ (isset($data['course_id']) && $data['course_id'] == $course['course_name']) ? 'selected' : '' }}>
+                                        {{ $course['course_name'] }}
+                                    </option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3 row">
+                        <label for="grade" class="col-sm-2 col-form-label">Grade</label>
+                        <div class="col-sm-10">
+                            <select class="form-control" name="grade" id="grade">
+                                <option selected>Choose...</option>
+                                <option value="A" {{ (isset($data['grade']) && $data['grade'] == 'A') ? 'selected' : '' }}>A</option>
+                                <option value="A-" {{ (isset($data['grade']) && $data['grade'] == 'A-') ? 'selected' : '' }}>A-</option>
+                                <option value="B+" {{ (isset($data['grade']) && $data['grade'] == 'B+') ? 'selected' : '' }}>B+</option>
+                                <option value="B" {{ (isset($data['grade']) && $data['grade'] == 'B') ? 'selected' : '' }}>B</option>
+                                <option value="B-" {{ (isset($data['grade']) && $data['grade'] == 'B-') ? 'selected' : '' }}>B-</option>
+                                <option value="C+" {{ (isset($data['grade']) && $data['grade'] == 'C+') ? 'selected' : '' }}>C+</option>
+                                <option value="C" {{ (isset($data['grade']) && $data['grade'] == 'C') ? 'selected' : '' }}>C</option>
+                                <option value="C-" {{ (isset($data['grade']) && $data['grade'] == 'C-') ? 'selected' : '' }}>C-</option>
+                                <option value="D+" {{ (isset($data['grade']) && $data['grade'] == 'D+') ? 'selected' : '' }}>D+</option>
+                                <option value="D" {{ (isset($data['grade']) && $data['grade'] == 'D') ? 'selected' : '' }}>D</option>
+                                <option value="D-" {{ (isset($data['grade']) && $data['grade'] == 'D-') ? 'selected' : '' }}>D-</option>
+                                <option value="E" {{ (isset($data['grade']) && $data['grade'] == 'E') ? 'selected' : '' }}>E</option>
+                            </select>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label class="col-sm-2 col-form-label"></label>
+                        <div class="col-sm-10">
+                            <button type="submit" class="btn btn-primary" name="submit">Add Data</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+            @if (Route::current()->uri == 'grades')
             <div class="card-body p-0">
                 <table class="table table-striped projects">
                     <thead>
@@ -49,7 +130,7 @@
                             <th style="width: 30%">Student</th>
                             <th style="width: 30%">Course</th>
                             <th style="width: 30%">Grade</th>
-                            {{-- <th style="width: 20%">Action</th> --}}
+                            <th style="width: 10%">Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -60,20 +141,17 @@
                                 <td>{{ $grade['student_name'] }}</td>
                                 <td>{{ $grade['course_name'] }}</td>
                                 <td>{{ $grade['grade'] }}</td>
-
-                                {{-- <td class="project-actions text-right">
-                                    <form action="{{ route('update-student', ['id' => $student['id']]) }}" method="post">
-                                        @csrf
-                                        @method('put')
-                                        <button type="submit" class="btn btn-info btn-sm"><i class="fas fa-pencil-alt"></i>Edit</button>
-                                    </form>
-                                    <form action="{{ route('delete-student', ['id' => $student['id']]) }}" method="post">
+                                <td class="project-actions">
+                                    <a href="{{ url('grades/'.$grade['id']) }}" class="btn btn-info btn-sm">
+                                        <i class="fas fa-pencil-alt"></i>Edit
+                                    </a>
+                                    <form action="{{ route('delete-grade', ['id' => $grade['id']]) }}" method="post">
                                         @csrf
                                         @method('delete')
                                         <button type="submit" class="btn btn-danger btn-sm"  ><i class="fas fa-trash"></i>Delete</button>
                                     </form>
                                     
-                                </td> --}}
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>
@@ -82,6 +160,7 @@
         </div>
     </div>
 </div>
+@endif
 @stop
 
 @section('adminlte_js')

@@ -31,7 +31,6 @@
                 </div>
             </div>
         </div>
-
         <div class="card">
             <div class="card-header">
                 <h3 class="card-title">Table Courses</h3>
@@ -41,7 +40,54 @@
                     </button>
                 </div>
             </div>
-            <div class="card-body p-0">
+                @if ($errors->any())
+                <div class="alert alert-danger">
+                    @foreach ($errors->all() as $item)
+                    <li>{{$item}}</li>
+                     @endforeach                    
+                </div>
+                @endif
+    
+                @if (session()->has('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>     
+                @endif
+            <div class="card-body p-0 m-3">
+                    <form action="" method="post">
+                        @csrf
+        
+                        @if(Route::current()->uri == 'courses/{id}')
+                        @method('put')
+                        @endif
+        
+                        <div class="mb-3 row">
+                            <label for="Nama" class="col-sm-2 col-form-label">Name</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" name='name' id="name" value="{{ isset($data['name'])?$data['name']:old('name')}}">
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="credit" class="col-sm-2 col-form-label">Credit</label>
+                            <div class="col-sm-10">
+                                <input type="number" class="form-control" name='credit' id="credit" value="{{ isset($data['credit'])?$data['credit']:old('credit')}}">
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="description" class="col-sm-2 col-form-label">Description</label>
+                            <div class="col-sm-10">
+                                <textarea class="form-control" rows="3" name="description" id="description">{{ isset($data['description']) ? $data['description'] : old('description') }}</textarea>
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label class="col-sm-2 col-form-label"></label>
+                            <div class="col-sm-10">
+                                <button type="submit" class="btn btn-primary" name="submit">Add Data</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                @if (Route::current()->uri == 'courses')
                 <table class="table table-striped projects">
                     <thead>
                         <tr>
@@ -49,7 +95,7 @@
                             <th style="width: 35%">Name</th>
                             <th style="width: 1%">Credit</th>
                             <th style="width: 50%">Description</th>
-                            {{-- <th style="width: 20%">Action</th> --}}
+                            <th style="width: 20%">Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -60,19 +106,17 @@
                                 <td>{{ $course['name'] }}</td>
                                 <td>{{ $course['credit'] }}</td>
                                 <td>{{ $course['description'] }}</td>
-                                {{-- <td class="project-actions text-right">
-                                    <form action="{{ route('update-student', ['id' => $student['id']]) }}" method="post">
-                                        @csrf
-                                        @method('put')
-                                        <button type="submit" class="btn btn-info btn-sm"><i class="fas fa-pencil-alt"></i>Edit</button>
-                                    </form>
-                                    <form action="{{ route('delete-student', ['id' => $student['id']]) }}" method="post">
+                                <td class="project-actions">
+                                    <a href="{{ url('courses/'.$course['id']) }}"class="btn btn-info btn-sm">
+                                        <i class="fas fa-pencil-alt"></i>Edit
+                                    </a>
+                                    <form action="{{ route('delete-course', ['id' => $course['id']]) }}" method="post">
                                         @csrf
                                         @method('delete')
                                         <button type="submit" class="btn btn-danger btn-sm"  ><i class="fas fa-trash"></i>Delete</button>
                                     </form>
                                     
-                                </td> --}}
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>
@@ -81,6 +125,7 @@
         </div>
     </div>
 </div>
+@endif
 @stop
 
 @section('adminlte_js')

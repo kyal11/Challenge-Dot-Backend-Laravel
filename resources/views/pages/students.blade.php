@@ -116,7 +116,7 @@
                     <div class="mb-3 row">
                         <label class="col-sm-2 col-form-label"></label>
                         <div class="col-sm-10">
-                            <button type="submit" class="btn btn-primary" name="submit">Tambah Data</button>
+                            <button type="submit" class="btn btn-primary" name="submit">Add Data</button>
                         </div>
                     </div>
                 </form>

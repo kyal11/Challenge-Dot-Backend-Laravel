@@ -40,7 +40,17 @@ Route::put('/students/{id}', [StudentController::class, 'update'])->name('update
 Route::delete('/students/{id}', [StudentController::class, 'delete'])->name('delete-student');
 
 Route::get('/courses', [CourseController::class, 'show'])->name('show-course');
+Route::post('/courses', [CourseController::class, 'create'])->name('create-course');
+Route::get('/courses/{id}', [CourseController::class, 'edit'])->name('edit-course');
+Route::put('/courses/{id}', [CourseController::class, 'update'])->name('update-course');
+Route::delete('/courses/{id}', [CourseController::class, 'delete'])->name('delete-course');
+
 Route::get('/grades', [GradeController::class, 'show'])->name('show-grade');
+Route::post('/grades', [GradeController::class, 'create'])->name('create-grade');
+Route::get('/grades/{id}', [GradeController::class, 'edit'])->name('edit-grade');
+Route::put('/grades/{id}', [GradeController::class, 'update'])->name('update-grade');
+Route::delete('/grades/{id}', [GradeController::class, 'delete'])->name('delete-grade');
+
 
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
