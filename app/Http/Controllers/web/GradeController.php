@@ -12,10 +12,15 @@ class GradeController extends Controller
 {
     const API_URL = "http://127.0.0.1:8000/api/grades";
 
-    public function show()
+    public function show(Request $request)
     {
         try {
-            $response = Http::get(self::API_URL);
+            $jwtToken = $_COOKIE['jwt_token'] ?? null;
+
+            $response = Http::withHeaders([
+                'Authorization' => 'Bearer ' . $jwtToken,
+            ])->get(self::API_URL);
+
             if ($response->successful()) {
                 $data = $response->json();
                 $grades = collect($data['grades'])->map(function ($grade) {
@@ -23,6 +28,7 @@ class GradeController extends Controller
                     $grade['course_name'] = courses::find($grade['course_id'])->name;
                     return $grade;
                 });
+                $grades = $grades->sortBy('student_name')->values();
                 return view('pages.grades', ['data' => $grades]);
             } else {
                 return view('pages.grades')->with('error', 'Failed to retrieve data from the API.');
@@ -31,10 +37,18 @@ class GradeController extends Controller
             return redirect()->route('show-grade')->withErrors($e->getMessage())->withInput();
         }
     }
-    public function create(Request $request) {
+
+    public function create(Request $request)
+    {
         try {
-            $response = Http::post(self::API_URL, $request->all());
+            $jwtToken = $_COOKIE['jwt_token'] ?? null;
+
+            $response = Http::withHeaders([
+                'Authorization' => 'Bearer ' . $jwtToken,
+            ])->post(self::API_URL, $request->all());
+
             $data = $response->json();
+
             if (!isset($data['status'])) {
                 return redirect()->route('show-grade')->withErrors($data['error'])->withInput();
             } else {
@@ -48,7 +62,12 @@ class GradeController extends Controller
     public function edit(Request $request, $id)
     {
         try {
-            $response = Http::get(self::API_URL . "/$id", $request->all() );
+            $jwtToken = $_COOKIE['jwt_token'] ?? null;
+
+            $response = Http::withHeaders([
+                'Authorization' => 'Bearer ' . $jwtToken,
+            ])->get(self::API_URL . "/$id", $request->all());
+
             if ($response->successful()) {
                 $data = $response->json();
                 $grades = collect([$data['grade']])->map(function ($grade) {
@@ -62,12 +81,16 @@ class GradeController extends Controller
             return redirect()->route('show-grade')->withErrors($e->getMessage())->withInput();
         }
     }
-    
 
     public function update(Request $request, $id)
     {
         try {
-            $response = Http::put(self::API_URL . "/$id", $request->all());
+            $jwtToken = $_COOKIE['jwt_token'] ?? null;
+
+            $response = Http::withHeaders([
+                'Authorization' => 'Bearer ' . $jwtToken,
+            ])->put(self::API_URL . "/$id", $request->all());
+
             $data = $response->json();
 
             if (!isset($data['status'])) {
@@ -83,7 +106,12 @@ class GradeController extends Controller
     public function delete($id)
     {
         try {
-            $response = Http::delete(self::API_URL . "/$id");
+            $jwtToken = $_COOKIE['jwt_token'] ?? null;
+
+            $response = Http::withHeaders([
+                'Authorization' => 'Bearer ' . $jwtToken,
+            ])->delete(self::API_URL . "/$id");
+
             $data = $response->json();
 
             if (!isset($data['status'])) {

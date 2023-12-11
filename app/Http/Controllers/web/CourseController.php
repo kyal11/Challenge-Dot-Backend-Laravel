@@ -10,10 +10,15 @@ class CourseController extends Controller
 {
     const API_URL = "http://127.0.0.1:8000/api/courses";
 
-    public function show()
+    public function show(Request $request)
     {
         try {
-            $response = Http::get(self::API_URL);
+            $jwtToken = $_COOKIE['jwt_token'] ?? null;
+            
+            $response = Http::withHeaders([
+                'Authorization' => 'Bearer ' . $jwtToken,
+            ])->get(self::API_URL);
+
             if ($response->successful()) {
                 $data = $response->json();
                 return view('pages.courses', ['data' => $data['courses']]);
@@ -28,7 +33,12 @@ class CourseController extends Controller
     public function create(Request $request)
     {
         try {
-            $response = Http::post(self::API_URL, $request->all());
+            $jwtToken = $_COOKIE['jwt_token'] ?? null;
+            
+            $response = Http::withHeaders([
+                'Authorization' => 'Bearer ' . $jwtToken,
+            ])->post(self::API_URL, $request->all());
+
             $data = $response->json();
 
             if (!isset($data['status'])) {
@@ -42,7 +52,12 @@ class CourseController extends Controller
     }
 
     public function edit(Request $request, $id) {
-        $response = Http::get(self::API_URL . "/$id", $request->all());
+        $jwtToken = $_COOKIE['jwt_token'] ?? null;
+        
+        $response = Http::withHeaders([
+            'Authorization' => 'Bearer ' . $jwtToken,
+        ])->get(self::API_URL . "/$id", $request->all());
+
         $data = $response->json();
         return view('pages.courses', ['data' => $data['course']]);
     }
@@ -50,7 +65,12 @@ class CourseController extends Controller
     public function update(Request $request, $id)
     {
         try {
-            $response = Http::put(self::API_URL . "/$id", $request->all());
+            $jwtToken = $_COOKIE['jwt_token'] ?? null;
+            
+            $response = Http::withHeaders([
+                'Authorization' => 'Bearer ' . $jwtToken,
+            ])->put(self::API_URL . "/$id", $request->all());
+
             $data = $response->json();
 
             if (!isset($data['status'])) {
@@ -66,7 +86,12 @@ class CourseController extends Controller
     public function delete($id)
     {
         try {
-            $response = Http::delete(self::API_URL . "/$id");
+            $jwtToken = $_COOKIE['jwt_token'] ?? null;
+            
+            $response = Http::withHeaders([
+                'Authorization' => 'Bearer ' . $jwtToken,
+            ])->delete(self::API_URL . "/$id");
+
             $data = $response->json();
 
             if (!isset($data['status'])) {

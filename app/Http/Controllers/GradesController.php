@@ -10,7 +10,7 @@ class GradesController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth:api')->except(['index','store','update','destroy','show']);
+        $this->middleware('auth:api');
     }
     private function validateGrade(Request $request) {
         return Validator::make($request->all(), [
@@ -20,7 +20,7 @@ class GradesController extends Controller
         ]);
     }
 
-    public function index() {
+    public function index(Request $request) {
         try {
             $grades = grades::all();
 

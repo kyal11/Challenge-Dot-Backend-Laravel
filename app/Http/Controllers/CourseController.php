@@ -10,7 +10,7 @@ class CourseController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth:api')->except(['index','store','update','destroy','show']);
+        $this->middleware('auth:api');
     }
 
     private function validateCourse(Request $request)
@@ -22,15 +22,24 @@ class CourseController extends Controller
         ]);
     }
 
-    public function index()
+    public function index(Request $request)
     {
         try {
-            $courses = courses::all();
+            $query = courses::query();
 
+            $name = $request->input('name');
+            if ($name) {
+                $query->where('name', 'like', '%' . $name . '%');
+            }
+            
+            $data = $query->orderBy('name', 'asc')->get();
+            if (!$data) {
+                return response()->json(['error' => 'Courses not found'], 404);
+            }
             return response()->json([
                 'status' => true,
                 'message' => 'Course data found',
-                'courses' => $courses
+                'courses' => $data
             ], 200);
         } catch (\Exception $e) {
             return response()->json(['error' => $e->getMessage()], 500);

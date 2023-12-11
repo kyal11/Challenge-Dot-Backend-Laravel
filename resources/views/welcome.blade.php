@@ -89,12 +89,13 @@
 </div>
 
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
 
 
 <script>
     function fetchDataStudents() {
 
-        var jwtToken = localStorage.getItem("jwt_token");
+        var jwtToken = Cookies.get('jwt_token');
 
         $.ajax({
             url: "http://127.0.0.1:8000/api/students",
@@ -117,7 +118,7 @@
 
     function fetchDataCourses() {
 
-        var jwtToken = localStorage.getItem("jwt_token");
+        var jwtToken = Cookies.get('jwt_token');
 
         $.ajax({
             url: "http://127.0.0.1:8000/api/courses",
@@ -139,7 +140,7 @@
     }
     function fetchDataGrades() {
 
-        var jwtToken = localStorage.getItem("jwt_token");
+        var jwtToken = Cookies.get('jwt_token');
 
         $.ajax({
             url: "http://127.0.0.1:8000/api/grades",
@@ -160,7 +161,7 @@
         });
     }   
     function fetchDataUsers() {
-    var jwtToken = localStorage.getItem("jwt_token");
+    var jwtToken = Cookies.get('jwt_token');
 
     $.ajax({
         url: "http://127.0.0.1:8000/api/users",
