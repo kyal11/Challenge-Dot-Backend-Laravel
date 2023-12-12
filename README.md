@@ -4,8 +4,8 @@ Aplikasi CRUD yang menggunakan studi kasus sistem akademik universitas dimana pa
 ## Feature
 - Login
 - Register
-- Authentication wit JWT
-- Admin Panel (Development)
+- Authentication with JWT
+- Admin Panel 
 - CRUD Model
 ## Model
 <img src="https://github.com/kyal11/Challenge-Dot-Backend-Laravel/blob/main/Model-Relasi.png" width="500" />
